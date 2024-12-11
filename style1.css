@@ -1,0 +1,345 @@
+/*THE BLUE*/
+
+/*sets the background non covered by backgrounds to black*/
+body{
+    background-color: black; 
+}
+
+/*sky header for top of page*/
+.homeintro{
+    background-image: url('images\\theblue.JPG');
+    
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*background for qualifications page*/
+.qualifications{
+    background-image: url('images\\aggieland.JPG');
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*background for portfolio page*/
+.portfolio{
+    background-image: url('images\\paintedsky.JPG');
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*background for service page*/
+.service{
+    background-image: url('images\\munnar.JPG');
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*picture of myself in the sky*/
+.skyfigure{
+    position: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/*picture of myself to be used in winter theme, set to not display here*/
+.snowfigure{
+    display: none;
+}
+
+/*stops the winter theme header message from displaying in sky theme*/
+.snowwelcome{
+    display: none;
+}
+
+/*my name that shows up at the top of the home page*/
+.hometitle{
+    color: whitesmoke;
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 90px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height:2;
+}
+
+/*container for the directory section, showcases background image of jatayu*/
+.directory{
+    background-image: url('images\\jatayu.JPG');
+    min-width: 100%;
+    min-height: 220%;
+    border-left: 50px;
+    border-right: 50px;
+    margin: auto;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 10%;
+
+}
+
+/*grid container that holds and positions the buttons for accessing different pages*/
+.grid{
+    display: grid;
+    position: relative;
+    top: 80px;
+    grid-gap: 200px;
+    /*makes a 2 x 2 grid*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: auto;
+    justify-items: center;
+}
+
+/*styling for all directory buttons except for change style*/
+.homebutton1{
+    background-color: skyblue;
+    border-radius: 15px;
+    height: 140px;
+    width: 280px;
+    font-size: 26px;
+    font-family: 'Vast Shadow', serif;
+}
+
+/*makes it so that homepage buttons change color when hovered over*/
+.homebutton1:hover{
+    background-color: orange;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+/*positioning for shadow effect on each home page button*/
+
+.item1{
+
+    box-shadow: -2px -2px 2px navy;
+}
+
+.item2{
+
+    box-shadow: 2px -2px 2px navy;
+}
+
+.item3{
+
+    box-shadow: -2px 2px 2px navy;
+}
+
+.item4{
+
+    box-shadow: 2px 2px 2px navy;
+    
+}
+
+/*styling and positioning for the change style button*/
+
+.homebutton2{
+
+    background-color: skyblue;
+    border-radius: 15px;
+    height: 60px;
+    width: 150px;
+    font-size: 22px;
+    font-family: 'Vast Shadow', serif;
+    top: 85px;
+    position: relative;
+    left: 45%;
+    box-shadow: 0px -2px 2px navy;
+}
+
+/*allows for change style button to change color when being hovered over*/
+.homebutton2:hover{
+    background-color: orange;
+    transition: 0.8s;
+}
+
+/*The big text saying I'm a junior computer science major*/
+.info{
+    font-size: 60px;
+    top: 590px;
+    position: relative;
+    color: whitesmoke;
+    font-family: 'Inter', sans-serif;
+    font-style: bold;
+}
+
+/*container for biography section which includes the big text about my major and the long aboutme*/
+.infocontainer{
+    padding-left: 5%;
+    padding-right:5%;
+}
+
+/*changes the color of "Texas A&M University" to maroon in the big text in the info section*/
+.tamucolor{
+    color:maroon;
+}
+
+/*styling and positioning for the header title on the portfolio page*/
+.portfoliotitle{
+    color: whitesmoke;
+    font-family: 'Kumar One', cursive;
+    font-size: 80px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*text outline size for portfolio page*/
+ul.p{
+    -webkit-text-stroke: 0.5px;    
+}
+
+/*header title for qualifications page*/
+.qualificationstitle{
+    color: whitesmoke;
+    font-family: 'Zen Dots', cursive;
+    font-size: 80px;
+    position: relative;
+    -webkit-text-stroke: 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*styling and positioning for bullet point text on portfolio, qualifications, and service pages*/
+ul{
+    list-style-type: circle;
+    font-size: 30;
+    color: white;
+    position: relative;
+    font-family: 'Arvo', serif;
+    -webkit-text-fill-color: maroon;
+    width: 900px;
+    left: 25%;
+    background: rgba(10, 28, 128, 0.6);
+}
+
+/*text outline size for qualifications page*/
+ul.q{
+    -webkit-text-stroke: 0.5px;
+    
+}
+
+/*styling for service page headert title*/
+.servicetitle{
+    color: whitesmoke;
+    font-family: 'Ribeye Marrow', cursive;
+    font-size: 80px;
+    display:inline-block;
+    position: relative;
+    -webkit-text-stroke: 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*text outline size for service page*/
+ul.s{
+    -webkit-text-stroke: 1px;
+}
+
+/*padding between bullet points*/
+li{
+    padding-bottom: 20px;
+}
+
+/*styling and positioning for embedded pdf on qualifications page*/
+.pdf{
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    left: 1%;
+    top: 13%;
+}
+
+/*container class for drop down button*/
+.menu{
+    position: absolute;
+    display: inline-block;
+    z-index: 7;
+    left: 2%;
+    top: 2%;
+}
+
+/*styling for button that leads to drop down menu*/
+.menbut{
+    background-color: greenyellow;
+    width: 120px;
+}
+
+/*container class for list of buttons that extends from the drop down, set to not display until menu button is hovered over*/
+.pageslist{
+    display: none;
+    position: relative;
+    background-color: greenyellow;
+}
+
+/*styling for buttons within the drop down menu*/
+.menucontent{
+    display: block;
+    color: black;
+    background-color: greenyellow;
+    width: 120px;
+}
+
+/*changes color of buttons within dropdown menu when hovered over*/
+.menucontent:hover{
+    background-color:cyan;
+    color: gold;
+
+}
+
+/*causes drop down menu to be displayed after hovering over the "menu" button*/
+.menu:hover .pageslist{
+    display: block;
+}
+
+/*changes background color of "menu" button to dark green when hovered over*/
+.menu:hover .menbut{
+    background-color: forestgreen;
+}
+
+/*Styles and positions the text for the biography on the homepage*/
+.aboutme{
+    color: whitesmoke;
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    top: 600px;
+    padding-bottom: 20px;
+}
+
+/*sets link color to cyan*/
+a{
+    color: cyan;
+}
+
+/*styles the sub bullet points*/
+.sub{
+    background-color: transparent;
+    width:600;
+}

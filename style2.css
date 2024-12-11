@@ -1,0 +1,337 @@
+/*SNOWY MOUNTAIN KINGDOM*/
+
+
+/*any point of the site that isn't covered by background image should appear as back*/
+body{
+    background-color: black;
+    
+    
+}
+
+/*the first background users will see on the homepage, displays the northern lights and the message "welcome to" on top*/
+.header{
+    background-image: url('images2\\northernlights.jpg');
+    
+    min-width: 100%;
+    min-height: 40%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*the second background users will see depicting a snowy mountain, picture of myself is placed on top, also my name*/
+.homeintro{
+    background-image: url('images2\\snowymountain.jpg');
+    
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*the background container for the directory, depicts a winter forest*/
+.directory{
+    background-image: url('images2\\snowforest.jpg');
+    min-width: 100%;
+    min-height: 220%;
+    margin: auto;
+    background-position: center;
+    background-size: 100%;
+    padding-bottom: 20%;
+}
+
+/*sets the sky picture of me to not be visible in the winter version of the site*/
+.skyfigure{
+    display: none;
+
+}
+
+/*positions and sizes the winter photo of myself*/
+.snowfigure{
+    height: 20%;
+    width: 8%;
+    right: 22%;
+    bottom: 1%;
+    position: absolute;
+
+}
+
+/*styles the welcome to snowy mountain kingdom message*/
+.snowwelcome{
+    font-size: 400%;
+    left: 5%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-family: 'Lilita One', cursive;
+
+}
+
+/*colors the "welcome to" part of the message white and positions it on the screen*/
+.night{
+    color: snow;
+    height: 39%;
+    
+    vertical-align: middle;
+}
+
+/*colors the "snowy mountain kingdom" part of the message black and positions it on the screen*/
+.day{
+    color: black;
+    top: 50%;
+}
+
+/*displays my name against the backdrop of the snowy mountain*/
+.hometitle{
+    color: snow;
+    font-size: 876%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+    bottom: -33%;
+    text-align: center;
+}
+
+/*the buttons that are displayed in the directory to go to different pages*/
+.homebutton1{
+
+    background-color: snow;
+    border-radius: 50%;
+    height: 140px;
+    width: 280px;
+    font-size: 350%;
+    /*color: whitesmoke*/
+    font-family: 'Rouge Script', cursive;
+    z-index: 6;
+    
+}
+
+/*when hovering over the directory buttons they will shift from white to blue*/
+.homebutton1:hover{
+    background-color: lightskyblue;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+/*grid container that holds the directory buttons*/
+.grid{
+    display: grid;
+    position: relative;
+    top: 80px;
+    grid-gap: 180px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin: auto;
+    justify-items: center;
+    z-index: 5;
+}
+
+/*the change style button, manifiests as a fixed button in the bottom right corner that stays in place as the screen moves up or down*/
+.homebutton2{
+
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background: url('images2\\snowflake.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: snow;
+    font-size: 0;
+    display: block;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 40;
+}
+
+/*change style button changes to blue when hovered over*/
+.homebutton2:hover{
+    background-color: skyblue;
+    transition: 0.8s;
+}
+
+/*background for portfolio page*/
+.portfolio{
+    background-image: url('images2\\ultrasledders.jpg');
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*background for qualifications page*/
+.qualifications{
+    background-image: url('images2\\mountainside.jpeg');
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*background for service page*/
+.service{
+    background-image: url('images2\\darkforest.jpg');
+    min-width: 100%;
+    min-height: 100%;
+    margin:auto;
+    padding:0;
+    background-position: center;
+    background-size: cover;
+}
+
+/*positioning and styling for bulleted text within the portfolio, qualifications, and service pages*/
+ul{
+    list-style-type: circle;
+    font-size: 140%;
+    color: black;
+    position: relative;
+    font-family: 'Arvo', serif;
+    -webkit-text-fill-color: yellow;
+    width: 60%;
+    background: rgba(128, 128, 128, .7); /*puts a transparent grey background behind the text*/
+    left: 2%;
+    -webkit-text-stroke: 0.5px;
+}
+
+/*adds space below each bullet point*/
+li{
+    padding-bottom: 10px;
+}
+
+/*make it so that header button for drop down menu doesn't appear (since the menu buttons will now just be displayed in the header)*/
+.menbut{
+    display: none;
+}
+
+/*the header menu, will contain the northern lights in its background*/
+.menu{
+    width: 100%;
+    height: 10%;
+    background-image: url('images2\\northcrop.jpg');
+    background-size: cover;
+}
+
+/*contains the buttons for the header menu, each button is spaced equally*/
+.pageslist{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*styling for menu buttons*/
+.menucontent{
+    display: block;
+    color: black;
+    background-color: cyan;
+    width: 120px;
+    height: 60%;
+}
+
+/*changes color of header menu buttons upon hover*/
+.menucontent:hover{
+    background-color:white;
+    color: red;
+
+}
+
+/*styling and positioning for the header titles in portfolio, service, and qualifications*/
+.sidetitle{
+    color: snow;
+    font-size: 500%;
+    position: relative;
+    display: flex;
+    left: 2%;
+}
+
+/*styling for the header for portfolio page*/
+.portfoliotitle{
+    font-family: 'Koulen', cursive;
+
+}
+
+/*styling for the header for service page*/
+.servicetitle{
+    font-family: 'Plaster', cursive;
+
+}
+
+/*styling for the header for qualifications page*/
+.qualificationstitle{
+    font-family: 'Limelight', cursive;
+
+}
+
+/*styling and positioning for big text preempting bio*/
+.info{
+    font-size: 3em;
+    position: relative;
+    color: cyan;
+    font-family: 'Inter', sans-serif;
+    font-style: bold;
+    float: right;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    font-family: 'Squada One', cursive;
+}
+
+/*Styles and positions the text for the biography on the homepage*/
+.aboutme{
+    color: snow;
+    font-size: 0.9em;
+    position: relative;
+    width: 100%;
+    background: rgba(128, 128, 128, .6);
+    display: flex;
+    align-items: center;
+
+    max-height: 55%;
+
+    top: 20%;
+}
+
+/*changed link color to pink*/
+a{
+    color: pink;
+}
+
+/*container holding the bio info with dog picture inside*/
+.infocontainer{
+    background-color: maroon;
+    top: 10rem;
+    height: 55%;
+    width: 100%;
+    background-image: url('images2//dog.JPG');
+    background-size:cover;
+    position: relative;
+    
+}
+
+/*styling and positioning for pdf*/
+.pdf{
+    width: 25%;
+    height: 60%;
+    position: absolute;
+    right: 5%;
+    top: 20%;
+}
+
+/*styling for sub-bulletpoints*/
+.sub{
+    background-color: transparent;
+    width: 800;
+
+}

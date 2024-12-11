@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style1.css?v=1" />
+  <link rel="icon" type="image/png" href="images/ultimatehusky.png" />
+<title>ANIL PARTHASARATHI</title>
+<meta http-equiv="Content-Type" content="test/html; charset=iso-8859-1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Cinzel&family=Inter:wght@700&family=Koulen&family=Kumar+One&family=Libre+Baskerville&family=Lilita+One&family=Ribeye+Marrow&family=Rouge+Script&family=Sedgwick+Ave&family=Squada+One&family=Vast+Shadow&family=Zen+Dots&display=swap" rel="stylesheet">
+<script>
+
+  //if no localstorage is setup then set current style to style 1 (sky theme)
+  if(localStorage.getItem('style') === null){
+    localStorage.setItem('style', 'style1.css?v=1');
+  }
+
+  //function for setting theme and favicon upon entering a page
+  function setTheme(){
+
+    var style = document.getElementsByTagName('link')[0];
+    var favicon = document.getElementsByTagName('link')[1];
+
+    //sets the style and favicon to the attributes corresponding to the one recorded in local storage
+
+    if (localStorage.getItem('style') === "style1.css?v=1"){
+      style.setAttribute('href', "style1.css?v=1");
+      favicon.setAttribute('href', "images/ultimatehusky.png");
+    }
+    else{
+      style.setAttribute('href', 'style2.css?v=1');
+      favicon.setAttribute('href', "images2/snowymountainking.png");
+    }
+  }
+
+  //function for changing theme upon button press
+  function swapTheme(){
+
+    var style = document.getElementsByTagName('link')[0];
+
+    //checks to see current theme stored in local storage and switches to the opposite
+    //changes both stylesheet and favicon
+
+    if (localStorage.getItem('style') === "style1.css?v=1"){
+
+      style.setAttribute('href', 'style2.css?v=1');
+      localStorage.setItem('style', 'style2.css?v=1');
+      favicon.setAttribute('href', "images2/snowymountainking.png");
+
+    }
+    else{
+
+      style.setAttribute('href', 'style1.css?v=1');
+      localStorage.setItem('style', 'style1.css?v=1');
+      favicon.setAttribute('href', "images/ultimatehusky.png");
+
+    }
+    window.scrollTo(0, 0);
+  }
+
+  //theme is set immediatly upon loading the page
+
+  Window.onload = setTheme();
+
+</script>
+
+</head>
+
+<body>
+
+  <div class="portfolio">
+
+    <!drop down menu>
+
+    <div class = menu>
+
+      <button class = menbut>
+  
+        Menu
+  
+      </button>
+      <div class = pageslist>
+
+        <a href=index.html><button class = "menucontent">Home</button></a>
+        <a href=portfolio.html><button class = "menucontent">Portfolio</button></a>
+        <a href=qualifications.html><button class = "menucontent">Qualifications</button></a>
+        <a href=service.html><button class = "menucontent">Service</button></a>
+        <a href=ai.html><button class = "menucontent">AI Photo Lore</button></a>
+        <button onclick="swapTheme()"  class = "menucontent">Change Style!</button>
+  
+      </div>
+  
+    </div>
+
+    <!page content>
+    
+  <span class = "portfoliotitle sidetitle">Portfolio</span>
+
+      <ul class = "p">
+
+        <li>
+          Created <a href="https://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> in C++: <a href = "https://github.com/Anil-Parthasarathi/Mine-Sweeper">Github</a>
+
+          <ul class = "sub">
+            
+            <li>
+
+              This project allows the user to play the classic game of minesweeper. The game generates a grid where bombs are randomly placed into positons unknown to the player. The player can select spaces to check whether or not a bomb is present and place flags in spaces where they believe a bomb to be. In order to win, the player must place flags on all the bombs without accidentally opening a bomb. 
+
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li>
+          Collaborated with a peer to make a program with 3 separate games included using Python: <a href = "https://github.com/Anil-Parthasarathi/threegameproject">Github</a>
+
+          <ul class = "sub">
+            
+            <li>
+
+              Within this program, the user will initially be shown a menu giving instructions for how to use it. The player is given the ability to select between three different games using keyboard inputs. These games are Tic-Tac-Toe, Mazewalker (a game where you are given a maze puzzle to navigate out of), and Rock Paper Scissors.
+
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          Developed this website using HTML, CSS, and JavaScript.
+
+          <ul class = "sub">
+            
+            <li>
+
+              This website features the ability to swap between two different styles to radically change the presentation of information.
+
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          Plan to develop a database program in the future to keep track of movies and books I have experienced. This database will be specially tailored to feature the attributes that I find the most important.
+        </li>
+
+        <li>
+          Plan to one day create an augmented reality phone application that can spice up every day life. The specifics of what this application will feature are still undecided.
+        </li>
+
+      </ul>
+
+
+
+  
+  </div>
+  
+  </body>
+  </html>

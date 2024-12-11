@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href= "style1.css?v=1" />
+<link rel="icon" type="image/png" href="images/ultimatehusky.png" />
+<title>ANIL PARTHASARATHI</title>
+<meta http-equiv="Content-Type" content="test/html; charset=iso-8859-1">
+
+<!fonts>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Cinzel&family=Inter:wght@700&family=Kumar+One&family=Libre+Baskerville&family=Lilita+One&family=Ribeye+Marrow&family=Rouge+Script&family=Sedgwick+Ave&family=Squada+One&family=Vast+Shadow&family=Zen+Dots&display=swap" rel="stylesheet">
+
+<script>
+
+  //if no localstorage is setup then set current style to style 1 (sky theme)
+  if(localStorage.getItem('style') === null){
+    localStorage.setItem('style', 'style1.css?v=1');
+  }
+
+  //function for setting theme and favicon upon entering a page
+  function setTheme(){
+
+    var style = document.getElementsByTagName('link')[0];
+    var favicon = document.getElementsByTagName('link')[1];
+
+    //sets the style and favicon to the attributes corresponding to the one recorded in local storage
+
+    if (localStorage.getItem('style') === "style1.css?v=1"){
+      style.setAttribute('href', "style1.css?v=1");
+      favicon.setAttribute('href', "images/ultimatehusky.png");
+    }
+    else{
+      style.setAttribute('href', 'style2.css?v=1');
+      favicon.setAttribute('href', "images2/snowymountainking.png");
+    }
+  }
+
+  //function for changing theme upon button press
+  function swapTheme(){
+
+    var style = document.getElementsByTagName('link')[0];
+
+    //checks to see current theme stored in local storage and switches to the opposite
+    //changes both stylesheet and favicon
+
+    if (localStorage.getItem('style') === "style1.css?v=1"){
+
+      style.setAttribute('href', 'style2.css?v=1');
+      localStorage.setItem('style', 'style2.css?v=1');
+      favicon.setAttribute('href', "images2/snowymountainking.png");
+
+    }
+    else{
+
+      style.setAttribute('href', 'style1.css?v=1');
+      localStorage.setItem('style', 'style1.css?v=1');
+      favicon.setAttribute('href', "images/ultimatehusky.png");
+
+    }
+    window.scrollTo(0, 0);
+  }
+
+  //theme is set immediatly upon loading the page
+
+  Window.onload = setTheme();
+
+</script>
+
+</head>
+
+<body>
+
+<!header section featuring title of website and my name>
+
+<div class="header">
+
+  <span class = "snowwelcome night" >WELCOME TO</span>
+  
+</div>  
+
+<div class="homeintro">
+
+  <span class = "snowwelcome day" >SNOWY MOUNTAIN KINGDOM</span>
+
+  <span class = "hometitle">ANIL PARTHASARATHI</span>
+
+  <img src="images/myself.png" class = skyfigure>
+  <img src="images2/snowyme.png" class = snowfigure>
+
+
+</div>  
+
+<!directory section featuring navigation buttons, background, and about me>
+
+<div class="directory">
+
+    <!button for changing theme>
+
+    <button onclick="swapTheme()" class = "homebutton2">Change Style!</button>
+
+    <!contains buttons for switching pages>
+
+    <div class = grid>
+
+      <a href=portfolio.html><button class = "homebutton1 item1">Portfolio</button></a>
+      <a href=qualifications.html><button class = "homebutton1 item2" >Qualifications</button></a>
+      <a href=service.html><button class = "homebutton1 item3">Service</button></a>
+      <a href=ai.html><button class = "homebutton1 item4">AI Photo Lore</button></a>
+      
+
+  </div>
+
+  <!container for the about me>
+
+  <div class = infocontainer>
+
+    <span class = "info">Anil Parthasarathi is a junior Computer Science major attending&nbsp; <span class = tamucolor> Texas A&M University</span>. Expected graduation: May 2025.</span>
+
+    <p class = "aboutme">Anil Parthasarathi was born on July 1st, 2003, in Fremont, California. Growing up in California, he attended Mission Valley Elementary School from 2008 to 2015. Beginning in third grade, Anil embarked on his journey training in martial arts. While practicing Taekwondo at Martial Arts America, Anil was instilled with values such as respect, self-esteem, confidence, and discipline. Ultimately, by middle school, Anil had achieved a black belt in the art of Taekwondo. Also, around this time, Anil began pursuing his interest in Computer Science through after-school coding courses. Through CodeWizardsHQ, Anil took his first step toward his future career path by learning the fundamentals of HTML and CSS. Anil began junior high in 2015 and attended one year at Hopkins Junior High before moving to Leander, Texas.</p>
+
+    <p class = "aboutme">Upon moving to Texas in the summer of 2016, Anil enrolled in Stiles Middle School and then moved up to Vandegrift High School the following year. In the tenth grade, Anil took his first official school course in Computer Science, where he was introduced to core programming concepts through Scratch before progressing to his first encounter with Python. In the following two years, he learned Java and cybersecurity basics through his high school courses. During the 11th grade, Anil took part in the INCubatoredu entrepreneurship program at his school, where he collaborated with a team of peers to form a start-up business based around an original product. At the end of the year, the business became a finalist in the final pitch competition and earned the opportunity to receive funding. However, the team mutually chose to close the business due to logistical reasons. Meanwhile, Anil continued his training in martial arts by enrolling in Shaolin-Do Kung Fu, where he progressed to a brown belt by the end of high school. Anil graduated from high school in May 2021.</p>
+
+    <p class = "aboutme">In August 2021, Anil started attending Texas A&M University College Station as a general engineering major. However, he knew from the beginning that he wanted to pursue Computer Science. Within the first year, he delved further into Python through the Engineering 102 course. The following summer, Anil&#8217;s ETAM application for Computer Science was accepted, and he officially became a Computer Science major that fall. Since then, he has gained more experience in C++, Java, Haskell, HTML, CSS, and JavaScript in his classes, as well as learning important computer science concepts such as data structures, algorithms, recursion, discrete math, computer organization, and computer systems. In the summer of 2023, Anil interned with Skillbanc, where he learned the Dart programming language and applied it in mobile application development. This internship also taught Anil essential skills in API utilization, refactoring, debugging, and GitHub version control.</p>
+
+    <p class = "aboutme">Please check out his &nbsp;<a href="https://www.linkedin.com/in/angp/"> Linkedin</a>&nbsp; and&nbsp;<a href="https://github.com/Anil-Parthasarathi?tab=repositories"> GitHub</a>!</p>
+
+
+  </div>   
+  
+</div>  
+
+
+
+</body>
+</html>
