@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style1.css?v=1" />
+    <link rel="icon" type="image/png" href="images/ultimatehusky.png" />
+  <title>ANIL PARTHASARATHI</title>
+  <meta http-equiv="Content-Type" content="test/html; charset=iso-8859-1">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Cinzel&family=Inter:wght@700&family=Koulen&family=Kumar+One&family=Libre+Baskerville&family=Lilita+One&family=Ribeye+Marrow&family=Rouge+Script&family=Sedgwick+Ave&family=Squada+One&family=Vast+Shadow&family=Zen+Dots&display=swap" rel="stylesheet">  
+</head>
+
+<body>
+
+<canvas id="canv" style="border:2px solid"></canvas>
+
+<script>
+
+    //if no localstorage is setup then set current style to style 1 (sky theme)
+  if(localStorage.getItem('style') === null){
+    localStorage.setItem('style', 'style1.css?v=1');
+  }
+
+  //function for setting theme and favicon upon entering a page
+  function setTheme(){
+
+    var style = document.getElementsByTagName('link')[0];
+    var favicon = document.getElementsByTagName('link')[1];
+
+    //sets the style and favicon to the attributes corresponding to the one recorded in local storage
+
+    if (localStorage.getItem('style') === "style1.css?v=1"){
+      style.setAttribute('href', "style1.css?v=1");
+      favicon.setAttribute('href', "images/ultimatehusky.png");
+    }
+    else{
+      style.setAttribute('href', 'style2.css?v=1');
+      favicon.setAttribute('href', "images2/snowymountainking.png");
+    }
+  }
+
+  //function for changing theme upon button press
+  function swapTheme(){
+
+    var style = document.getElementsByTagName('link')[0];
+
+    //checks to see current theme stored in local storage and switches to the opposite
+    //changes both stylesheet and favicon
+
+    if (localStorage.getItem('style') === "style1.css?v=1"){
+
+      style.setAttribute('href', 'style2.css?v=1');
+      localStorage.setItem('style', 'style2.css?v=1');
+      favicon.setAttribute('href', "images2/snowymountainking.png");
+
+    }
+    else{
+
+      style.setAttribute('href', 'style1.css?v=1');
+      localStorage.setItem('style', 'style1.css?v=1');
+      favicon.setAttribute('href', "images/ultimatehusky.png");
+
+    }
+    window.scrollTo(0, 0);
+  }
+
+  //theme is set immediatly upon loading the page
+
+  Window.onload = setTheme();
+
+var canvas = document.getElementById("canv");
+
+var c = canvas.getContext("2d");
+
+canvas.width = window.innerWidth - 20;
+canvas.height = window.innerHeight - 100;
+
+var minWidth = 20;
+
+var scale = Math.min(canvas.width, canvas.height) / minWidth;
+
+var width = canvas.width / scale;
+
+var height = canvas.height / scale;
+
+function scaleX(pos){
+    return pos.x * scale;
+}
+
+function scaleY(pos){
+    return canvas.height - pos.y * scale;
+}
+
+//set up the ball
+var ball = {
+    radius : 0.3,
+    pos : {x : 0.3, y : 0.3},
+    vel : {x : 30.0, y : 30.0}
+
+};
+
+//set the values for constants
+var gravity = {x : 0, y: -10.0};
+var timeStep = 1.0 / 60.0;
+
+function draw(){
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    c.fillStyle = "red";
+
+    //draw the ball
+    c.beginPath();
+    c.arc(scaleX(ball.pos), scaleY(ball.pos), ball.radius * scale, 0, 2 * Math.PI);
+    c.closePath();
+    c.fill();
+}
+
+function simulate(){
+
+    //modify the velocity based on gravity times the time increment
+    ball.vel = {
+        x : ball.vel.x + gravity.x * timeStep,
+        y : ball.vel.y + gravity.y * timeStep
+    };
+
+    //modify the position based on the velocity times the time increment
+    ball.pos = {
+        x : ball.pos.x + ball.vel.x * timeStep,
+        y : ball.pos.y + ball.vel.y * timeStep
+    };
+
+
+    //add range checks so that the ball bounces
+    if (ball.pos.x < 0){
+        ball.pos.x = 0;
+        ball.vel.x = -ball.vel.x;
+    }
+
+    if (ball.pos.y < 0){
+        ball.pos.y = 0;
+        ball.vel.y = -ball.vel.y;
+    }
+
+    if (ball.pos.x > width){
+        ball.pos.x = width;
+        ball.vel.x = -ball.vel.x;
+    }
+
+    if (ball.pos.y > height){
+        ball.pos.y = height;
+        ball.vel.y = -ball.vel.y;
+    }
+}
+
+function render(){
+    simulate();
+    draw();
+    requestAnimationFrame(render);
+}
+
+render();
+	
+</script> 
+</body>
+</html>
